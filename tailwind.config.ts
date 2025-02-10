@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 const config: Config = {
     darkMode: ["class"],
@@ -55,9 +56,25 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+  		animation: {
+  			'slide-out-left': 'slideOutLeft 1s ease-in-out',
+  			'slide-out-right': 'slideOutRight 1s ease-in-out',
+  		},
+  		keyframes: {
+  			slideOutLeft: {
+  				'0%': { transform: 'translateX(0)' },
+  				'50%': { transform: 'translateX(-100%)' },
+  				'100%': { transform: 'translateX(0)' },
+  			},
+  			slideOutRight: {
+  				'0%': { transform: 'translateX(0)' },
+  				'50%': { transform: 'translateX(100%)' },
+  				'100%': { transform: 'translateX(0)' },
+  			},
+  		},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 };
 export default config;

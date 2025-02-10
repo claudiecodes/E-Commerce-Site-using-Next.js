@@ -5,18 +5,21 @@ import Slides from "@/components/Slides";
 
 export default function Home() {
   return (
-    <>
+    <div className="h-screen flex flex-col">
       <Banner />
       <Navbar />
-      <div className="flex justify-center p-10">
+      <div className="flex-1 flex items-center justify-center gap-4">
+        <h2 className="font-bold text-xl mr-[70px] animate-slide-out-left">
+          NEW
+        </h2>
         <Slides />
+        <h2 className="font-bold text-xl ml-[70px] animate-slide-out-right">
+          ARRIVAL
+        </h2>
       </div>
-      <div className="flex justify-center">
-        <h2 className="font-bold text-xl">NEW ARRIVAL</h2>
-      </div>
-      <div className="flex justify-center absolute bottom-5 w-full">
+      <div className="flex justify-center w-full py-5">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
